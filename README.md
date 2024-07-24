@@ -14,6 +14,7 @@ The `ollama_app.py` script allows you to generate text completions using differe
 - `llama3:8b`
 - `gemma2:9b`
 - `phi3-mini`
+- `llama3.1:8b`
 
 ### Prerequisites
 
@@ -61,7 +62,7 @@ def query_ollama(prompt, model_name, temperature=0):
     else:
         raise Exception(f"Unexpected content type: {response.headers.get('Content-Type')}")
 
-model_names = ["llama3:8b", "gemma2:9b", "mannix/phi3-mini-4k:latest"]
+model_names = ["llama3:8b", "gemma2:9b", "mannix/phi3-mini-4k:latest", "llama3.1:8b"]
 prompt = "Translate English to French: 'Hello, how are you?'"
 response = query_ollama(prompt, model_names[2])
 print(response)
