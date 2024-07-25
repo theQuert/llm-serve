@@ -11,6 +11,8 @@ The `ollama_app.py` script allows you to generate text completions using differe
 
 ### Supported Models
 
+Recommend `codetral:22b` for running as coding assistant...
+
 - `codestral:22b`
 - `codegemma:7b`
 - `codellama:13b`
