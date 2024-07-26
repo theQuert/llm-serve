@@ -14,11 +14,8 @@ The `ollama_app.py` script allows you to generate text completions using differe
 Recommend `codetral:22b` for running as coding assistant...
 
 - `codestral:22b`
-- `codegemma:7b`
-- `codellama:13b`
 - `llama3.1:8b`
 - `gemma2:9b`
-- `llama3:8b`
 
 ### Prerequisites
 
@@ -30,7 +27,6 @@ You can install the required library using pip:
 ```sh
 pip install requests
 ```
-
 ### Usage
 
 1. **Edit the Script**: Ensure that the `model_names` list contains the correct models you want to use.
@@ -66,7 +62,7 @@ def query_ollama(prompt, model_name, temperature=0):
     else:
         raise Exception(f"Unexpected content type: {response.headers.get('Content-Type')}")
 
-model_names = ["codestral:22b", "codegemma:7b", "codellama:13b", "llama3.1:8b", "gemma2:9b", "llama3:8b"]
+model_names = ["codestral:22b", "llama3.1:8b", "gemma2:9b"]
 prompt = "Translate English to French: 'Hello, how are you?'"
 response = query_ollama(prompt, model_names[2])
 print(response)
@@ -133,7 +129,7 @@ def query_vllm(prompt, model_name, max_tokens=50):
     return response.json()
 
 prompt = "Once upon a time"
-model_name = "mannix/phi3-mini-4k:latestt"
+model_name = "llama3.1:8b"
 response = query_vllm(prompt, model_name)
 print(response)
 ```
